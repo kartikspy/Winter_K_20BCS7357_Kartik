@@ -1,6 +1,32 @@
+//------------- Brute Force -------------//
+#include<bits/stdc++.h>
+using namespace std;
+bool Pattern(char s[],char t[]){
+      int k=strlen(s);
+      int l=strlen(t);
+      for(int i=0; i<k-l; i++){
+        for(int j=0; j<l; j++){
+            if(s[i]==s[j]){
+           if(j==(l-1)){
+            return true;
+           }
+            }
+        }
+      }
+      return false;
+}
+
+int main(){
+    char s[]={"ahsdddbsaiop"};
+    char t[]={"bsa"};
+    cout<<Pattern(s,t);
+}
+
+
+
+//KMP----- Algorithm  --------------KMP//
 #include <bits/stdc++.h>
 using namespace std;
-//KMP----- Algorithm  --------------KMP//
 vector <int> pre_function(string s){
       int n =s.size();
       vector<int> pi(n,0);
